@@ -12,45 +12,82 @@
 </head>
 
 <body>
-    <header class="flex justify-between bg-[#FFF22D]">
-        <section class=" w-full h-[70px] flex items-center gap-3">
-            <i class="fa-solid fa-bars ml-3 text-[#465EFF] cursor-pointer"></i>
-            <img src="https://assets.hgbrasil.com/finance/companies/big/banco-do-brasil.png"
-                class="w-[50px] border-r-1 border-gray-400 cursor-pointer" alt="logo">
+   <header class="bg-[#FFF22D] shadow-md">
+  <div class="flex items-center justify-between px-4 md:px-16 h-20">
 
-            <select id="Pra você" name="pra você" class="text-[#466DC6] ml-1 text-xl font-bold cursor-pointer">
-                <option value="pra você">Pra você</option>
-                <option value="Inicio">Inicio</option>
-                <option value="Contas">Contas</option>
-            </select>
-            <select id="Pro seu negocio" name="Pro seu negocio" class="text-[#466DC6] ml-1 text-xl font-bold cursor-pointer">
-                <option value="Pro seu negocio">Pro seu negócio</option>
-                <option value="Contas">Inicio</option>
-                <option value="Contas">Contas</option>
-            </select>
-            <select id="Agronegócios" name="Agronegócios" class="text-[#466DC6] ml-1 text-xl font-bold cursor-pointer">
-                <option value="Pro seu negocio">Agronegócios</option>
-                <option value="Contas">Custeio</option>
-                <option value="Contas">Investimentos</option>
-            </select>
-            <select id="Setor Público" name="Setor Público" class="text-[#466DC6] ml-1 text-xl font-bold cursor-pointer">
-                <option value="Setor Público">Setor Público</option>
-                <option value="Contas">Inicio</option>
-                <option value="Contas">Federal</option>
-            </select>
-            <section
-                class="flex items-center border border-gray-300 bg-[#CDCE54] w-[350px] h-[50px] ml-2 p-1 rounded-sm ">
-                <i class="fa-solid fa-magnifying-glass mr-2 text-white"></i>
-                <input type="text" placeholder="O que você procura?"
-                    class="text-white placeholder:text-white outline-0 placeholder:font-bold placeholder:text-lg placeholder:w-[300px] w-full">
-            </section>
-        </section>
-        <section class="flex items-center mr-4 text-xl font-bold text-[#466DC6] hover:bg-[#B0B022]">
-            <select name="" id="" class="cursor-pointer">
-                <option value="">ACESSE A SUA CONTA </option>
-            </select>
-        </section>
-    </header>
+    <!-- LADO ESQUERDO: LOGO + MENUS -->
+    <div class="flex items-center gap-4">
+      <!-- Menu Mobile -->
+      <i id="menu-button" class="fa-solid fa-bars text-[#465EFF] text-2xl md:hidden cursor-pointer"></i>
+
+      <!-- LOGO -->
+      <img src="https://assets.hgbrasil.com/finance/companies/big/banco-do-brasil.png"
+           class="w-12 md:w-14 cursor-pointer" alt="logo">
+
+      <!-- MENU DESKTOP -->
+      <nav class="hidden md:flex items-center gap-6">
+
+        <!-- Dropdown Template -->
+        <div class="relative group">
+          <button class="text-[#466DC6] font-bold text-lg dropdown-btn">Pra Você</button>
+          <div class="absolute top-full left-0 mt-2 w-40 bg-white rounded-md shadow-lg hidden dropdown-menu z-50">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contas</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="text-[#466DC6] font-bold text-lg dropdown-btn">Pro seu negócio</button>
+          <div class="absolute top-full left-0 mt-2 w-40 bg-white rounded-md shadow-lg hidden dropdown-menu z-50">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contas</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="text-[#466DC6] font-bold text-lg dropdown-btn">Agronegócios</button>
+          <div class="absolute top-full left-0 mt-2 w-40 bg-white rounded-md shadow-lg hidden dropdown-menu z-50">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Custeio</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Investimentos</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="text-[#466DC6] font-bold text-lg dropdown-btn">Setor Público</button>
+          <div class="absolute top-full left-0 mt-2 w-40 bg-white rounded-md shadow-lg hidden dropdown-menu z-50">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Início</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Federal</a>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- LADO DIREITO: ACESSE SUA CONTA -->
+    <div class="hidden md:block">
+      <select class="cursor-pointer font-bold text-[#466DC6] p-2 rounded hover:bg-[#B0B022]">
+        <option>ACESSE A SUA CONTA</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-[#FFF22D] transform -translate-x-full transition-transform duration-300 md:hidden shadow-lg z-50">
+    <div class="flex justify-end p-4">
+      <i id="close-menu" class="fa-solid fa-xmark text-2xl cursor-pointer"></i>
+    </div>
+    <nav class="flex flex-col gap-4 px-4 mt-4">
+      <a href="#" class="font-bold text-lg text-[#466DC6]">Pra Você</a>
+      <a href="#" class="font-bold text-lg text-[#466DC6]">Pro seu negócio</a>
+      <a href="#" class="font-bold text-lg text-[#466DC6]">Agronegócios</a>
+      <a href="#" class="font-bold text-lg text-[#466DC6]">Setor Público</a>
+      <a href="#" class="font-bold text-lg text-[#466DC6] mt-4">ACESSE A SUA CONTA</a>
+    </nav>
+  </div>
+</header>
+
+
+
     <div class="w-full h-[70px] bg-blue-700 flex items-center">
 <section class="flex items-center">
     <i class="fa-solid fa-house text-2xl text-[#FFF22D] ml-30 cursor-pointer"></i>
@@ -64,7 +101,7 @@
             <p class="text-white w-[450px] text-2xl">Pra você que busca um investimento seguro e que possa ser resgatado a qualquer
        hora, com o Certificado de Depósito Bancário (CDB), você investe seu dinheiro com
        remuneração diária.</p>
-       <button class="bg-[#FFF22D] h-[60px] w-[250px] flex items-center justify-center rounded-sm text-xl font-bold text-[#466DC6] mt-12 cursor-pointer">INVESTIR AGORA</button>
+       <button class="bg-[#FFF22D] h-[60px] w-[250px] flex items-center justify-center rounded-sm text-xl font-bold text-[#466DC6] mt-12 cursor-pointer hover:opacity-80">INVESTIR AGORA</button>
        <div class="flex gap-2 mt-50 items-center">
        <section class="bg-white w-[250px] h-[150px] flex flex-col rounded-md justify-center items-center">
 <p class="text-3xl font-bold text-[#466DC6]">Pré e Pós</p>
@@ -86,12 +123,30 @@
 <p class="text-md font-bold text-[#466DC6]">Diversas opções</p>
 <p class="text-md font-bold text-[#466DC6]">de liquidez</p>
        </section>
-       <section class="bg-[#5BF573] rounded-4xl h-[60px] text-center justify-center flex ml-140 cursor-pointer">
-        <i class="fa-brands fa-whatsapp text-5xl text-white pt-1"></i>
-       </section>
+       <a href="https://wa.me/5585982074805" target="_blank" aria-label="WhatsApp"
+            class="fixed bottom-6 right-6 z-50 w-14 h-14 flex items-center justify-center
+rounded-full bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.8)] hover:scale-110 hover:shadow-[0_0_35px_rgba(34,197,94,1)] transition-all duration-300">
+
+            <i class="fa-brands fa-whatsapp text-white text-3xl"></i>
+        </a>
        </div>
         </section>
     </main>
+    <script src="script.js"></script>
+
+    <script>
+  const menuButton = document.getElementById('menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
+
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.remove('-translate-x-full');
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('-translate-x-full');
+  });
+</script>
 </body>
 
 </html>
